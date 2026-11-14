@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Dashboard</h1>
+
+    <!-- 4 main buttons -->
+    <div class="menu">
+      <button class="btn menu-btn" data-target="uploadSection">Upload Data</button>
+      <button class="btn menu-btn" data-target="viewSection">View Data</button>
+      <button class="btn menu-btn" data-target="updateSection">Update Data</button>
+      <button class="btn menu-btn" data-target="deleteSection">Delete Data</button>
+    </div>
+
+    <!-- Message box (success / error) -->
+    <div id="message" class="message hidden"></div>
+
+    <!-- 1) UPLOAD (POST) -->
+    <section id="uploadSection" class="card section hidden">
+      <h2>Upload Student Data</h2>
+      <form id="uploadForm">
+        <label>Name <input type="text" name="name" required></label>
+        <label>Age <input type="number" name="age" min="1" required></label>
+        <label>Roll No <input type="text" name="rollno" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Course <input type="text" name="course" required></label>
+        <label>Department <input type="text" name="department" required></label>
+        <label>Domain <input type="text" name="domain" required></label>
+        <label>Year <input type="number" name="year" min="1" required></label>
+        <button type="submit" class="btn primary">Upload</button>
+      </form>
+    </section>
+
+    <!-- 2) VIEW (GET) -->
+    <section id="viewSection" class="card section hidden">
+      <h2>View Student Details</h2>
+      <form id="viewForm" class="inline-form">
+        <input type="text" id="viewRollno" placeholder="Enter Roll No" required>
+        <button type="submit" class="btn primary">Search</button>
+      </form>
+      <div id="viewResult"></div>
+    </section>
+
+    <!-- 3) UPDATE (GET + PUT) -->
+    <section id="updateSection" class="card section hidden">
+      <h2>Update Student Data</h2>
+      <form id="fetchForm" class="inline-form">
+        <input type="text" id="updateRollno" placeholder="Enter Roll No" required>
+        <button type="submit" class="btn primary">Fetch Details</button>
+      </form>
+
+      <!-- Fetch ke baad hi ye form dikhega -->
+      <form id="updateForm" class="hidden">
+        <label>Name <input type="text" name="name" required></label>
+        <label>Age <input type="number" name="age" min="1" required></label>
+        <label>Roll No <input type="text" name="rollno" readonly></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Course <input type="text" name="course" required></label>
+        <label>Department <input type="text" name="department" required></label>
+        <label>Domain <input type="text" name="domain" required></label>
+        <label>Year <input type="number" name="year" min="1" required></label>
+        <button type="submit" class="btn primary">Update</button>
+      </form>
+    </section>
+
+    <!-- 4) DELETE (DELETE) -->
+    <section id="deleteSection" class="card section hidden">
+      <h2>Delete Student</h2>
+      <form id="deleteForm" class="inline-form">
+        <input type="text" id="deleteRollno" placeholder="Enter Roll No" required>
+        <button type="submit" class="btn danger">Delete</button>
+      </form>
+    </section>
+
+    <a href="index.html" class="back-link">&larr; Back to Welcome</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
