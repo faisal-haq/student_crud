@@ -1,6 +1,6 @@
 // ===== Config =====
 // Spring Boot backend ka URL. Port alag ho to yahin change karo.
-const BASE_URL = "";
+const BASE_URL = "http://localhost:8080";
 
 const API = {
   create: `${BASE_URL}/api/student_info/create`,
